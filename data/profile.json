@@ -1,0 +1,20 @@
+{
+  "name": "Agustín Hernández",
+  "handle": "ROOT@UY",
+  "systemId": "FE_304_STORM",
+  "version": "TOKYO_STORM_v1.0.4",
+  "location": "URUGUAY_NODE",
+  "year": 2024,
+  "links": {
+    "github": "https://github.com/AgustinH09",
+    "fedora": "#",
+    "linux_foundation": "#",
+    "arch_wiki": "#"
+  },
+  "footerLinks": [
+    { "label": "GitHub_OSS", "url": "https://github.com/AgustinH09" },
+    { "label": "Fedora_Project", "url": "#" },
+    { "label": "Linux_Foundation", "url": "#" },
+    { "label": "Arch_Wiki", "url": "#" }
+  ]
+}

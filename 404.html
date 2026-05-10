@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KERNEL PANIC — 404</title>
+  <link rel="stylesheet" href="/style.css"/>
+  <style>
+    body {
+      background: var(--surface-container-lowest);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--margin);
+    }
+    .panic-container {
+      max-width: 800px;
+      padding: 40px;
+      border: 1px solid var(--error);
+      background: var(--surface-container-low);
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.2);
+    }
+    .panic-title {
+      color: var(--surface);
+      background: var(--error);
+      display: inline-block;
+      padding: 8px 24px;
+      margin-bottom: 24px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      animation: glitch 0.5s infinite;
+    }
+    .panic-text {
+      color: var(--error);
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .panic-btn {
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 12px 32px;
+      background: transparent;
+      cursor: pointer;
+      font-family: var(--font-code);
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .panic-btn:hover {
+      background: var(--primary);
+      color: var(--surface);
+    }
+  </style>
+</head>
+<body>
+  <div class="panic-container">
+    <div class="text-display-lg panic-title">KERNEL PANIC - NOT FOUND</div>
+    <div class="text-code-block panic-text">
+      Fatal exception 0x00000404 at 0x00000000. <br>
+      The requested memory page or resource is not mapped in the current context.<br><br>
+      System halted.<br>
+      Please contact the system administrator or reboot to home.
+    </div>
+    <a href="/" class="panic-btn text-label-caps">REBOOT TO HOME</a>
+  </div>
+</body>
+</html>

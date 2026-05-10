@@ -1,0 +1,50 @@
+[
+  {
+    "id": "PROJECT_01",
+    "title": "Tokyo_Storm UI",
+    "description": "High-fidelity design system implementation with comprehensive component library and responsive architecture.",
+    "stack": ["React", "Tailwind", "Figma"],
+    "status": "DEPLOYED",
+    "version": "v2.1.0",
+    "codePreview": {
+      "language": "typescript",
+      "filename": "ExperienceLog.ts"
+    },
+    "tags": [
+      { "label": "React", "color": "#82aaff" },
+      { "label": "Tailwind", "color": null }
+    ]
+  },
+  {
+    "id": "PROJECT_02",
+    "title": "Kernel Engine",
+    "description": "High-performance core logic processor built for memory safety, concurrency, and raw execution speed.",
+    "stack": ["Rust", "WASM"],
+    "status": "IN_PROGRESS",
+    "version": "v0.9.beta",
+    "codePreview": {
+      "language": "rust",
+      "filename": "Project_Matrix.rs"
+    },
+    "tags": [
+      { "label": "Rust", "color": "#f07178" },
+      { "label": "WASM", "color": null }
+    ]
+  },
+  {
+    "id": "PROJECT_03",
+    "title": "Core Rails API",
+    "description": "Robust backend API powering data pipelines with authentication, caching, and real-time event streaming.",
+    "stack": ["Ruby", "PostgreSQL"],
+    "status": "MAINTENANCE",
+    "version": "v3.2.1",
+    "codePreview": {
+      "language": "ruby",
+      "filename": "ApiController.rb"
+    },
+    "tags": [
+      { "label": "Ruby", "color": "#ff7eb6" },
+      { "label": "PostgreSQL", "color": null }
+    ]
+  }
+]

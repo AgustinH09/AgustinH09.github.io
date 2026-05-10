@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ROOT@UY — Tokyo Storm System Terminal</title>
+<meta name="description" content="Agustín Hernández — Systems Engineer from Uruguay. Ruby on Rails, React, Rust. Tokyo Storm Command Interface."/>
+<link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<!-- SEO H1 Hidden for screen readers / search engines -->
+<h1 class="visually-hidden">Agustín Hernández — Systems Engineer</h1>
+
+<!-- Kanji Background -->
+<span class="kanji-bg kanji-bg--left" aria-hidden="true">技師</span>
+<span class="kanji-bg kanji-bg--right" aria-hidden="true">嵐</span>
+<!-- Kernel Log Background -->
+<div class="kernel-log" id="kernel-log"><div class="text-code-block animate-scroll text-glow" style="font-size:10px;color:var(--primary);line-height:1.4" id="kernel-log-content"></div></div>
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar" aria-label="Main Navigation">
+<div class="sidebar__brand"><h2 id="profile-handle" class="text-label-caps text-glow sidebar-brand-title">ROOT@UY</h2><p id="profile-system-id" class="text-code-block sidebar-system-id">FE_304_STORM</p></div>
+<div class="sidebar-links">
+<a class="sidebar__link sidebar__link--active" href="#home" data-nav="home"><span class="material-symbols-outlined" aria-hidden="true">terminal</span>~/home</a>
+<a class="sidebar__link" href="#projects" data-nav="projects"><span class="material-symbols-outlined" aria-hidden="true">folder_open</span>~/projects</a>
+<a class="sidebar__link" href="#kernel" data-nav="kernel"><span class="material-symbols-outlined">memory</span>~/kernel</a>
+<a class="sidebar__link" href="#connect" data-nav="connect"><span class="material-symbols-outlined">lan</span>~/connect</a>
+</div>
+<button class="sidebar__btn">SYSTEM_INIT</button>
+<div class="sidebar__footer">
+<a class="sidebar__link" href="#" id="btn-fetch-config"><span class="material-symbols-outlined" aria-hidden="true">settings</span>FETCH_CONFIG</a>
+<a class="sidebar__link" href="#" id="btn-exit"><span class="material-symbols-outlined" aria-hidden="true">power_settings_new</span>EXIT</a>
+</div>
+</nav>
+<!-- Main -->
+<main class="main-content">
+<!-- Topbar -->
+<header class="topbar">
+<div id="profile-version" class="topbar__title text-glow">TOKYO_STORM_v1.0.4</div>
+<nav class="topbar__nav" id="topbar-nav">
+<a class="topbar__nav-link topbar__nav-link--active" href="#">RAILS</a>
+<a class="topbar__nav-link" href="#">REACT</a>
+<a class="topbar__nav-link" href="#">RUST</a>
+</nav>
+<div class="topbar__actions">
+<div class="topbar__clock"><span class="text-glow topbar-clock-time" id="sys-clock">00:00:00</span><span class="topbar-clock-uptime" id="sys-uptime">UP: 0h 0m</span></div>
+<button class="topbar__icon-btn" aria-label="Open Terminal"><span class="material-symbols-outlined" aria-hidden="true">terminal</span></button>
+<button class="topbar__icon-btn" aria-label="System Settings"><span class="material-symbols-outlined" aria-hidden="true">settings_input_component</span></button>
+<button class="topbar__icon-btn topbar-sys-ok" aria-label="System Status"><span class="material-symbols-outlined topbar-sys-ok-icon" aria-hidden="true">sensors</span>SYS_OK</button>
+</div>
+</header>
+
+<!-- ===== HOME ===== -->
+<div class="section section--active" id="section-home" data-section="home">
+<div class="content-canvas">
+<section class="boot-terminal text-code-block">
+<div class="boot-terminal__header"><span class="text-label-caps" style="color:var(--on-surface-variant)">BOOT_SEQ_01</span><span style="color:var(--primary);opacity:0.5" class="text-glow">tty1</span></div>
+<div class="boot-terminal__body" id="terminal-container">
+<div id="terminal-output"></div>
+<div id="terminal-prompt" class="terminal-prompt-line" style="display:none">
+<span class="text-glow" style="color:var(--primary)">ROOT@UY ~/home $</span>
+<input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" />
+</div>
+</div>
+</section>
+<section class="interactive-shell">
+<div class="shell-titlebar"><span class="shell-dot shell-dot--red"></span><span class="shell-dot shell-dot--yellow"></span><span class="shell-dot shell-dot--green"></span><span class="text-label-caps shell-titlebar-text">user@host:~</span></div>
+<div class="shell-body text-code-block">
+<div class="shell-body-prompt"><span class="text-glow shell-body-prompt-text">ROOT@UY ~/home $</span> <span class="text-glow">ls -la ./core_skills</span></div>
+<div class="module-grid" id="skills-grid">
+<div class="module-card">
+<div class="text-label-caps" style="color:var(--secondary);margin-bottom:8px;font-size:12px">MODULE_01</div>
+<h3 class="text-headline-md text-glow" style="color:var(--primary);margin-bottom:8px">Ruby on Rails</h3>
+<p style="color:var(--on-surface-variant);font-size:14px;margin-bottom:16px">Backend architecture, API design, monolithic structuring.</p>
+<div style="display:flex;gap:8px"><span class="module-tag" style="border-color:#ff7eb6;color:#ff7eb6">BACKEND</span><span class="module-tag">POSTGRES</span></div>
+<div class="module-card__overlay"><span class="text-glow blink" style="color:var(--primary);border:1px solid var(--primary);padding:4px 12px">executing...</span></div>
+</div>
+<div class="module-card module-card--active">
+<div class="module-card--active"><span class="module-card__badge text-label-caps">ACTIVE</span></div>
+<div class="text-label-caps" style="color:var(--secondary);margin-bottom:8px;font-size:12px">MODULE_02</div>
+<h3 class="text-headline-md text-glow" style="color:var(--primary);margin-bottom:8px">React.js</h3>
+<p style="color:var(--on-surface-variant);font-size:14px;margin-bottom:16px">Frontend component systems, state management, SPA.</p>
+<div style="display:flex;gap:8px"><span class="module-tag" style="border-color:#82aaff;color:#82aaff">FRONTEND</span><span class="module-tag">TYPESCRIPT</span></div>
+<div class="module-card__overlay"><span class="text-glow blink" style="color:var(--primary);border:1px solid var(--primary);padding:4px 12px">status: ACTIVE</span></div>
+</div>
+<div class="module-card">
+<div class="text-label-caps" style="color:var(--secondary);margin-bottom:8px;font-size:12px">MODULE_03</div>
+<h3 class="text-headline-md text-glow" style="color:var(--primary);margin-bottom:8px">Rust</h3>
+<p style="color:var(--on-surface-variant);font-size:14px;margin-bottom:16px">Systems programming, memory safety, high performance CLI.</p>
+<div style="display:flex;gap:8px"><span class="module-tag" style="border-color:#f07178;color:#f07178">SYSTEMS</span><span class="module-tag">WASM</span></div>
+<div class="module-card__overlay"><span class="text-glow blink" style="color:var(--primary);border:1px solid var(--primary);padding:4px 12px">executing...</span></div>
+</div>
+</div>
+<div class="cli-prompt"><span class="text-glow shell-body-prompt-text">ROOT@UY ~/home $</span>&nbsp;<span class="text-glow">execute --module=REACT</span><span class="cli-cursor blink"></span></div>
+</div>
+</section>
+</div>
+</div>
+
+<!-- ===== PROJECTS ===== -->
+<div class="section" id="section-projects" data-section="projects">
+<div class="content-canvas" style="padding:var(--margin);flex:1;max-width:none">
+<section class="ide-container">
+<div class="ide-tabs">
+<div class="ide-tabs__dots"><span class="shell-dot shell-dot--red"></span><span class="shell-dot shell-dot--yellow"></span><span class="shell-dot shell-dot--green"></span></div>
+<div style="display:flex;overflow-x:auto">
+<button class="ide-tab ide-tab--active"><span class="material-symbols-outlined" style="font-size:16px">integration_instructions</span>ExperienceLog.ts</button>
+<button class="ide-tab"><span class="material-symbols-outlined" style="font-size:16px">terminal</span>Project_Matrix.rs</button>
+</div>
+</div>
+<div class="ide-body">
+<div class="scanline"></div>
+<div class="code-editor">
+<div style="display:flex">
+<div class="code-editor__lines">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21</div>
+<div class="code-editor__content"><span class="syn-kw">import</span> { <span class="syn-type">SystemEngineer</span> } <span class="syn-kw">from</span> <span class="syn-str">'@core/uy-node'</span>;
+
+<span class="syn-kw">const</span> <span class="syn-fn">experienceLog</span>: <span class="syn-type">Project</span>[] = [
+  {
+    <span class="syn-prop">id:</span> <span class="syn-str">'PROJECT_01'</span>,
+    <span class="syn-prop">title:</span> <span class="syn-str">'Tokyo_Storm UI'</span>,
+    <span class="syn-prop">stack:</span> [<span class="syn-str">'React'</span>, <span class="syn-str">'Tailwind'</span>, <span class="syn-str">'Figma'</span>],
+    <span class="syn-prop">status:</span> <span class="syn-const">Status.DEPLOYED</span>
+  },
+  {
+    <span class="syn-prop">id:</span> <span class="syn-str">'PROJECT_02'</span>,
+    <span class="syn-prop">title:</span> <span class="syn-str">'Kernel Engine'</span>,
+    <span class="syn-prop">stack:</span> [<span class="syn-str">'Rust'</span>, <span class="syn-str">'WASM'</span>],
+    <span class="syn-prop">status:</span> <span class="syn-const">Status.IN_PROGRESS</span>
+  },
+  {
+    <span class="syn-prop">id:</span> <span class="syn-str">'PROJECT_03'</span>,
+    <span class="syn-prop">title:</span> <span class="syn-str">'Core Rails API'</span>,
+    <span class="syn-prop">stack:</span> [<span class="syn-str">'Ruby'</span>, <span class="syn-str">'PostgreSQL'</span>],
+    <span class="syn-prop">status:</span> <span class="syn-const">Status.MAINTENANCE</span>
+  }
+];</div>
+</div>
+</div>
+<div class="project-panel">
+<div class="project-panel-header"><h3 class="text-label-caps project-panel-title">PROJECT_MATRIX // VISUAL_RENDER</h3><span class="blink project-panel-cursor">_</span></div>
+<div class="project-grid" id="projects-grid">
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+
+<!-- ===== KERNEL ===== -->
+<div class="section" id="section-kernel" data-section="kernel">
+<div class="kernel-layout">
+<div class="file-tree">
+<div class="file-tree__header">MODULES</div>
+<div style="flex:1;overflow-y:auto;padding:8px 0">
+<div class="file-tree__item file-tree__item--parent"><span class="material-symbols-outlined" style="font-size:16px">keyboard_arrow_down</span><span class="material-symbols-outlined" style="font-size:16px">memory</span>CORE_SYSTEM</div>
+<div class="file-tree__item"><span class="material-symbols-outlined" style="font-size:16px">data_object</span>scheduler.rs</div>
+<div class="file-tree__item"><span class="material-symbols-outlined" style="font-size:16px">data_object</span>memory_mgr.rs</div>
+<div class="file-tree__item file-tree__item--active"><span class="material-symbols-outlined" style="font-size:16px">settings</span>system_profile.cfg</div>
+<div class="file-tree__item"><span class="material-symbols-outlined" style="font-size:16px">speed</span>telemetry_stream.rs</div>
+</div>
+</div>
+<div class="kernel-main">
+<div class="kernel-tabs"><button class="kernel-tab kernel-tab--active"><span class="material-symbols-outlined" style="font-size:16px">settings</span>system_profile.cfg<span class="material-symbols-outlined" style="font-size:14px;margin-left:auto;cursor:pointer">close</span></button><button class="kernel-tab"><span class="material-symbols-outlined" style="font-size:16px">data_object</span>telemetry_stream.rs</button></div>
+<div class="kernel-breadcrumb"><span>~/kernel</span><span class="material-symbols-outlined" style="font-size:14px">chevron_right</span><span>CORE_SYSTEM</span><span class="material-symbols-outlined" style="font-size:14px">chevron_right</span><span style="color:var(--on-surface-variant)">system_profile.cfg</span></div>
+<div class="kernel-content">
+<div class="kernel-content__inner">
+<!-- Header -->
+<div style="border-bottom:1px solid var(--outline-variant);padding-bottom:24px">
+<h1 class="text-display-lg" style="color:var(--primary);display:flex;align-items:center;gap:16px;letter-spacing:-0.04em"><span class="material-symbols-outlined sensor-wave" style="font-size:40px;box-shadow:0 0 15px rgba(125,207,255,0.4);border-radius:50%">sensors</span>KERNEL_DIAGNOSTICS</h1>
+<p class="text-code-block" style="color:var(--on-surface-variant);margin-top:16px;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px rgba(125,207,255,0.6);display:inline-block" class="blink"></span>Real-time system telemetry and node configuration active.</p>
+</div>
+<!-- Stats -->
+<div class="stat-grid">
+<div class="stat-card spring-in" style="animation-delay:0.1s"><div class="stat-card__glow" style="right:-40px;top:-40px;background:var(--primary)"></div><div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:32px;position:relative;z-index:10"><div><h3 class="text-label-caps" style="color:var(--primary);margin-bottom:4px;opacity:0.8">CPU_ALLOCATION</h3><div class="text-headline-md" style="color:var(--on-surface)">34.2 <span style="font-size:14px;color:var(--outline)">%</span></div></div><span class="material-symbols-outlined" style="color:var(--primary);opacity:0.8">memory</span></div><div class="stat-bars" id="cpu-bars"></div></div>
+<div class="stat-card spring-in" style="animation-delay:0.3s"><div class="stat-card__glow" style="left:-40px;bottom:-40px;background:var(--secondary)"></div><div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:32px;position:relative;z-index:10"><div><h3 class="text-label-caps" style="color:var(--secondary);margin-bottom:4px;opacity:0.8">MEMORY_USAGE</h3><div class="text-headline-md" style="color:var(--on-surface)">12.8 <span style="font-size:14px;color:var(--outline)">GB / 64.0 GB</span></div></div><span class="material-symbols-outlined" style="color:var(--secondary);opacity:0.8">database</span></div><div style="height:96px;width:100%;position:relative;z-index:10;border-bottom:1px solid rgba(63,72,78,0.5);padding-bottom:4px"><svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="overflow:visible"><path d="M0,80 L20,70 L40,85 L60,50 L80,60 L100,20 L100,100 L0,100 Z" fill="rgba(212,187,255,0.1)"/><path d="M0,80 L20,70 L40,85 L60,50 L80,60 L100,20" fill="none" stroke="#d4bbff" stroke-width="2" style="filter:drop-shadow(0px 4px 6px rgba(212,187,255,0.4))"/><circle cx="100" cy="20" r="3" fill="#d4bbff" class="blink"/></svg></div></div>
+</div>
+<!-- System Profile -->
+<div class="stat-card spring-in" style="animation-delay:0.5s;padding:0">
+<div style="background:var(--surface-container-low);border-bottom:1px solid var(--outline-variant);padding:16px;display:flex;align-items:center;justify-content:space-between"><h3 class="text-label-caps" style="display:flex;align-items:center;gap:12px;color:var(--on-surface)"><span class="material-symbols-outlined" style="font-size:18px;color:var(--outline)">settings_applications</span>SYSTEM_PROFILE.CFG</h3><span class="text-code-block" style="font-size:10px;color:var(--outline);background:var(--surface);padding:4px 8px;border:1px solid var(--outline-variant)">READ_ONLY</span></div>
+<div style="padding:24px 32px" class="text-code-block">
+<div class="profile-grid">
+<div class="profile-item"><span class="profile-item__label">Architecture</span><span class="profile-item__value" style="color:var(--primary)">x86_64_STORM_ENV</span></div>
+<div class="profile-item"><span class="profile-item__label">Kernel Version</span><span class="profile-item__value">Linux 6.8.0-custom-opt</span></div>
+<div class="profile-item"><span class="profile-item__label">Node ID</span><span class="profile-item__value" style="color:var(--secondary)">UY_MONTEVIDEO_001</span></div>
+<div class="profile-item"><span class="profile-item__label">Uptime</span><span class="profile-item__value">45d 12h 33m</span></div>
+<div class="profile-item"><span class="profile-item__label">Compiler Toolchain</span><span class="profile-item__value">rustc 1.78.0-nightly</span></div>
+<div class="profile-item"><span class="profile-item__label">Security Context</span><span class="profile-item__value" style="color:var(--error);display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:var(--error)" class="blink"></span>ELEVATED_ROOT</span></div>
+</div>
+<div style="margin-top:32px;padding:16px;background:var(--surface-container-lowest);border:1px solid var(--outline-variant);border-left:4px solid rgba(125,207,255,0.5);color:var(--outline);font-size:14px;line-height:1.8"># INIT_SEQUENCE_LOG<br>&gt; Bootstrapping core modules... [OK]<br>&gt; Initializing memory bounds... [OK]<br>&gt; Establishing secure socket layer... [OK]<br><span class="blink" style="color:var(--primary)">_</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===== CONNECT ===== -->
+<div class="section" id="section-connect" data-section="connect">
+<div class="connect-layout">
+<div class="connect-noise" id="connect-noise">
+<div class="particle" style="width:2px;height:2px;left:10%;animation-duration:8s"></div>
+<div class="particle" style="width:4px;height:4px;left:30%;animation-duration:12s;animation-delay:2s"></div>
+<div class="particle" style="width:3px;height:3px;left:60%;animation-duration:9s;animation-delay:1s"></div>
+<div class="particle" style="width:5px;height:5px;left:80%;animation-duration:15s;animation-delay:4s"></div>
+</div>
+<div class="ascii-bg"><pre>  _____  ___  _  __ __ __ ___    ____  _____ ___   ___  __  __
+ |_   _|/ _ \| |/ / \ \ / / _ \  / ___||_   _/ _ \ |  _ \|  \/  |
+   | | | | | | ' /   \ V / | | | \___ \  | || | | || |_) | |\/| |
+   | | | |_| | . \    | || |_| |  ___) | | || |_| ||  _ &lt;| |  | |
+   |_|  \___/|_|\_\   |_| \___/  |____/  |_| \___/ |_| \_\_|  |_|</pre></div>
+<div class="connect-content">
+<div style="margin-bottom:32px;padding:0 16px" class="text-code-block"><p style="color:var(--on-surface-variant);margin-bottom:8px">System online. Establish connection protocol.</p><p style="color:var(--primary)">Enter parameters to initialize communication sequence.</p></div>
+<div class="term-card">
+<div class="term-card__header"><span class="text-label-caps" style="color:var(--on-surface-variant)">/BIN/BASH - CONNECT.SH</span><div style="display:flex;gap:8px"><span class="shell-dot" style="background:var(--outline-variant);opacity:0.3;border:1px solid var(--outline-variant)"></span><span class="shell-dot" style="background:var(--outline-variant);opacity:0.3;border:1px solid var(--outline-variant)"></span><span class="shell-dot" style="background:var(--outline-variant);opacity:0.3;border:1px solid var(--outline-variant)"></span></div></div>
+<div class="term-card__body">
+<div style="display:flex;flex-direction:column;gap:8px"><span class="term-prompt" style="color:var(--on-surface-variant)">./connect.sh --init</span><span style="color:var(--primary-container);margin-left:16px;font-weight:700">[OK] Initializing contact form modules...</span></div>
+<form id="connect-form" style="display:flex;flex-direction:column;gap:32px;margin-left:16px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;align-items:center;gap:16px"><label for="arg-name" style="color:var(--secondary);font-weight:700;width:96px;flex-shrink:0">--name</label><input type="text" id="arg-name" class="term-input term-input--name" placeholder="[string]" autocomplete="off" style="flex:1;max-width:480px"></div>
+<div style="display:flex;align-items:center;gap:16px"><label for="arg-email" style="color:#ff007c;font-weight:700;width:96px;flex-shrink:0">--email</label><input type="email" id="arg-email" class="term-input term-input--email" placeholder="[string]" autocomplete="off" style="flex:1;max-width:480px"></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px"><div style="display:flex;justify-content:space-between;align-items:center"><label for="arg-message" style="color:var(--primary-container);font-weight:700">--message</label><span style="color:var(--on-surface-variant);font-size:12px">EOF to finish</span></div><textarea id="arg-message" class="term-input term-input--msg" placeholder="Enter payload data here..." rows="6"></textarea></div>
+<div style="margin-top:16px;display:flex;align-items:center;gap:16px;padding-top:16px;border-top:1px solid rgba(63,72,78,0.3)"><span class="term-prompt" style="color:var(--on-surface-variant)"></span><button type="button" class="glow-btn" id="connect-submit"><span class="material-symbols-outlined" style="font-size:20px">send</span>--EXECUTE</button><span class="blinking-cursor" style="color:var(--primary-container);font-weight:900;font-size:18px">_</span></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+<div id="profile-footer-text" class="text-code-block footer-text">© 2024 SYSTEM_ENGINEER // URUGUAY_NODE</div>
+<div class="text-code-block footer-links" id="footer-links-container">
+</div>
+</footer>
+</main>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

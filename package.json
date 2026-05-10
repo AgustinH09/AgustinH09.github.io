@@ -1,0 +1,29 @@
+{
+  "name": "agustinh09.github.io",
+  "version": "1.0.0",
+  "description": "Personal website — Tokyo Storm terminal aesthetic with Pretext-powered typographic ASCII art",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgustinH09/AgustinH09.github.io.git"
+  },
+  "keywords": [],
+  "author": "AgustinH09",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgustinH09/AgustinH09.github.io/issues"
+  },
+  "homepage": "https://agustinh09.github.io",
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.0.11"
+  },
+  "dependencies": {
+    "@chenglou/pretext": "^0.0.6"
+  }
+}

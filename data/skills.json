@@ -1,0 +1,32 @@
+[
+  {
+    "id": "MODULE_01",
+    "title": "Ruby on Rails",
+    "description": "Backend architecture, API design, monolithic structuring.",
+    "tags": [
+      { "label": "BACKEND", "color": "#ff7eb6" },
+      { "label": "POSTGRES", "color": null }
+    ],
+    "active": false
+  },
+  {
+    "id": "MODULE_02",
+    "title": "React.js",
+    "description": "Frontend component systems, state management, SPA.",
+    "tags": [
+      { "label": "FRONTEND", "color": "#82aaff" },
+      { "label": "TYPESCRIPT", "color": null }
+    ],
+    "active": true
+  },
+  {
+    "id": "MODULE_03",
+    "title": "Rust",
+    "description": "Systems programming, memory safety, high performance CLI.",
+    "tags": [
+      { "label": "SYSTEMS", "color": "#f07178" },
+      { "label": "WASM", "color": null }
+    ],
+    "active": false
+  }
+]

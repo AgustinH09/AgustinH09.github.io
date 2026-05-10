@@ -1,0 +1,56 @@
+{
+  "bootServices": [
+    { "name": "System Logging Service", "duration": 280 },
+    { "name": "Firewall Rules (nftables)", "duration": 180 },
+    { "name": "Network Time Sync", "duration": 350 },
+    { "name": "Reached target Network", "duration": 150 },
+    { "name": "Tokyo_Storm Display Env", "duration": 420 }
+  ],
+  "introSequence": [
+    "> Establishing connection to core mainframe...",
+    "> Verifying authorization tokens... [OK]",
+    "> Loading Tokyo_Storm CLI environment...",
+    "",
+    "> SYSTEM.ONLINE",
+    "> Engineering interfaces active."
+  ],
+  "neofetch": {
+    "ascii": [
+      "  ████████╗███████╗",
+      "  ╚══██╔══╝██╔════╝",
+      "     ██║   ███████╗",
+      "     ██║   ╚════██║",
+      "     ██║   ███████║",
+      "     ╚═╝   ╚══════╝"
+    ],
+    "info": [
+      { "label": "OS", "value": "Tokyo_Storm v1.0.4" },
+      { "label": "Host", "value": "AgustinH09@github.io" },
+      { "label": "Kernel", "value": "6.5.0-storm x86_64" },
+      { "label": "Shell", "value": "storm-bash 5.2" },
+      { "label": "WM", "value": "Tokyo_Storm_DE" },
+      { "label": "Packages", "value": "rails, react, rust" },
+      { "label": "Terminal", "value": "tty1 — 256color" }
+    ]
+  },
+  "prompt": "ROOT@UY ~/home $",
+  "commands": ["help", "whoami", "skills", "projects", "kernel", "connect", "clear", "uname -a", "neofetch", "date", "uptime"],
+  "kernelLogs": [
+    "kernel: [ 0.000000] Linux version 6.5.0-storm",
+    "kernel: [ 0.000000] Command line: BOOT_IMAGE=/vmlinuz",
+    "kernel: [ 0.021034] secureboot: Secure boot enabled",
+    "kernel: [ 0.102341] smpboot: CPU0: Intel(R) Core(TM) i9",
+    "kernel: [ 0.543211] PCI: Using ACPI for IRQ routing",
+    "systemd[1]: Started Network Manager.",
+    "kernel: [ 1.234567] eth0: link up, 10Gbps",
+    "systemd[1]: Reached target Network.",
+    "kernel: [ 2.345678] random: crng init done",
+    "storm_daemon: Initializing memory banks...",
+    "storm_daemon: Syncing with URUGUAY_NODE...",
+    "kernel: [ 3.456789] nvme0n1: p1 p2 p3",
+    "kernel: [ 4.567890] EXT4-fs (nvme0n1p3): mounted",
+    "systemd[1]: Started Tokyo_Storm UI server.",
+    "kernel: [ 5.678901] input: Virtual Keyboard",
+    "storm_daemon: Access granted to local user."
+  ]
+}
