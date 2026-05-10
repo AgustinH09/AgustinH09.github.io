@@ -1,0 +1,26 @@
+[
+  {
+    "id": "BLOG_01",
+    "title": "On Abstraction: The Architect's Dilemma",
+    "date": "2026-04-12",
+    "summary": "We build systems to hide complexity, but when do our abstractions become prisons? A deep dive into the philosophy of system architecture and the danger of losing touch with the bare metal.",
+    "tags": ["ARCHITECTURE", "LINUX", "PHILOSOPHY"],
+    "category": "Developer"
+  },
+  {
+    "id": "BLOG_02",
+    "title": "Configuring the Perfect Dotfiles",
+    "date": "2026-03-28",
+    "summary": "Your terminal is your home. In this post, I break down my approach to creating reproducible, modular dotfiles that turn a chaotic bash prompt into a hyper-personalized command center.",
+    "tags": ["TERMINAL", "VIM", "SETUP"],
+    "category": "Personal"
+  },
+  {
+    "id": "BLOG_03",
+    "title": "Starting the Kanji Journey",
+    "date": "2026-02-15",
+    "summary": "Learning a new language is the ultimate system refactor. Here is how I am applying engineering principles to the acquisition of Kanji, tracking spaced repetition and visual memory.",
+    "tags": ["JAPANESE", "LEARNING", "TOOLS"],
+    "category": "Japanese Learner"
+  }
+]

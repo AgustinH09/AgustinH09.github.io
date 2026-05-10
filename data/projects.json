@@ -2,7 +2,7 @@
   {
     "id": "PROJECT_01",
     "title": "Tokyo_Storm UI",
-    "description": "High-fidelity design system implementation with comprehensive component library and responsive architecture.",
+    "description": "A highly immersive terminal-inspired design system. It brings the aesthetic of an engineering workstation to the web, proving that abstract architectures can still be accessible and beautiful.",
     "stack": ["React", "Tailwind", "Figma"],
     "status": "DEPLOYED",
     "version": "v2.1.0",
@@ -18,7 +18,7 @@
   {
     "id": "PROJECT_02",
     "title": "Kernel Engine",
-    "description": "High-performance core logic processor built for memory safety, concurrency, and raw execution speed.",
+    "description": "An experimental core logic processor built to explore the boundaries of memory safety and raw execution speed. It serves as a sandbox for high-concurrency systems design.",
     "stack": ["Rust", "WASM"],
     "status": "IN_PROGRESS",
     "version": "v0.9.beta",
@@ -34,7 +34,7 @@
   {
     "id": "PROJECT_03",
     "title": "Core Rails API",
-    "description": "Robust backend API powering data pipelines with authentication, caching, and real-time event streaming.",
+    "description": "The invisible workhorse. A robust backend API that powers data pipelines and real-time event streams silently and efficiently behind the scenes.",
     "stack": ["Ruby", "PostgreSQL"],
     "status": "MAINTENANCE",
     "version": "v3.2.1",

@@ -1,20 +1,23 @@
 {
   "name": "Agustín Hernández",
-  "handle": "ROOT@UY",
+  "handle": "ROOT",
   "systemId": "FE_304_STORM",
   "version": "TOKYO_STORM_v1.0.4",
-  "location": "URUGUAY_NODE",
-  "year": 2024,
+  "location": "SYS_NODE",
+  "year": 2026,
+  "bio": "Systems Engineer. Bridging the gap between deeply abstract architectures and accessible web experiences.",
   "links": {
     "github": "https://github.com/AgustinH09",
-    "fedora": "#",
-    "linux_foundation": "#",
-    "arch_wiki": "#"
+    "fedora": "https://fedoraproject.org/",
+    "linux_foundation": "https://openprofile.dev/profile/agustinh09",
+    "dotfiles": "https://github.com/AgustinH09/dotfiles",
+    "hyprland": "https://hyprland.org/"
   },
   "footerLinks": [
     { "label": "GitHub_OSS", "url": "https://github.com/AgustinH09" },
-    { "label": "Fedora_Project", "url": "#" },
-    { "label": "Linux_Foundation", "url": "#" },
-    { "label": "Arch_Wiki", "url": "#" }
+    { "label": "Fedora_Project", "url": "https://fedoraproject.org/" },
+    { "label": "Linux_Foundation", "url": "https://openprofile.dev/profile/agustinh09" },
+    { "label": "Dotfiles", "url": "https://github.com/AgustinH09/dotfiles" },
+    { "label": "Hyprland", "url": "https://hyprland.org/" }
   ]
 }
