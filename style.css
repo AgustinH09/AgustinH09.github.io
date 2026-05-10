@@ -471,3 +471,26 @@ body::before {
   color: var(--on-primary-container);
   border-color: var(--primary-container);
 }
+
+#global-terminal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: rgba(4, 5, 6, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  border: none;
+}
+
+body.global-terminal-active #global-terminal-overlay {
+  opacity: 1;
+  pointer-events: all;
+}

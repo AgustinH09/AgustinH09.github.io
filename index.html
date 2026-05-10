@@ -16,6 +16,21 @@
 <span class="kanji-bg kanji-bg--right" aria-hidden="true">嵐</span>
 <!-- Kernel Log Background -->
 <div class="kernel-log" id="kernel-log"><div class="text-code-block animate-scroll text-glow" style="font-size:10px;color:var(--primary);line-height:1.4" id="kernel-log-content"></div></div>
+<!-- Global Terminal Overlay -->
+<section id="global-terminal-overlay" class="boot-terminal text-code-block">
+  <div class="boot-terminal__header">
+    <span class="text-label-caps" style="color:var(--on-surface-variant)">BOOT_SEQ_01</span>
+    <span style="color:var(--primary);opacity:0.5" class="text-glow">tty1</span>
+    <button id="close-global-terminal" style="margin-left:auto; background:none; border:none; color:var(--error); cursor:pointer; font-family:var(--font-code);">[ESC] CLOSE</button>
+  </div>
+  <div class="boot-terminal__body" id="terminal-container">
+    <div id="terminal-output"></div>
+    <div id="terminal-prompt" class="terminal-prompt-line" style="display:none">
+      <span class="text-glow" style="color:var(--primary)">ROOT ~/home $</span>
+      <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" />
+    </div>
+  </div>
+</section>
 <!-- Sidebar -->
 <nav class="sidebar" id="sidebar" aria-label="Main Navigation">
 <div class="sidebar__brand"><h2 id="profile-handle" class="text-label-caps text-glow sidebar-brand-title">ROOT</h2><p id="profile-system-id" class="text-code-block sidebar-system-id">FE_304_STORM</p></div>
@@ -51,16 +66,7 @@
 <!-- ===== HOME ===== -->
 <div class="section section--active" id="section-home" data-section="home">
 <div class="content-canvas">
-<section class="boot-terminal text-code-block">
-<div class="boot-terminal__header"><span class="text-label-caps" style="color:var(--on-surface-variant)">BOOT_SEQ_01</span><span style="color:var(--primary);opacity:0.5" class="text-glow">tty1</span></div>
-<div class="boot-terminal__body" id="terminal-container">
-<div id="terminal-output"></div>
-<div id="terminal-prompt" class="terminal-prompt-line" style="display:none">
-<span class="text-glow" style="color:var(--primary)">ROOT ~/home $</span>
-<input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" />
-</div>
-</div>
-</section>
+
 <section style="margin-bottom: 32px; padding: 24px; background: var(--surface-container-low); border: 1px solid var(--outline-variant); border-left: 4px solid var(--primary);">
   <p id="profile-bio" class="text-code-block" style="font-size: 14px; line-height: 1.6; color: var(--on-surface);"></p>
 </section>
@@ -71,7 +77,7 @@
 <div class="module-grid" id="skills-grid">
 <!-- Content will be injected by data-loader.ts -->
 </div>
-<div class="cli-prompt"><span class="text-glow shell-body-prompt-text">ROOT ~/home $</span>&nbsp;<span class="text-glow">execute --module=REACT</span><span class="cli-cursor blink"></span></div>
+<div class="cli-prompt"><span class="text-glow shell-body-prompt-text">ROOT ~/home $</span>&nbsp;<span class="text-glow" style="color:var(--outline)">Press ~ or ` to drop to shell</span><span class="cli-cursor blink"></span></div>
 </div>
 </section>
 </div>

@@ -5,6 +5,7 @@
 import '../style.css';
 import { initRouter, onNavigate } from './router';
 import { initTerminal } from './terminal';
+import { initGlobalTerminal } from './global-terminal';
 import { initClock } from './clock';
 import { initKernelCharts } from './kernel';
 import { initConnect } from './connect';
@@ -12,9 +13,11 @@ import { initBackgroundLogs, initParallax } from './effects';
 import { initVim } from './vim';
 import { initWindowControls } from './window-controls';
 import { initData } from './data-loader';
+import { initTheme } from './theme';
 
 document.addEventListener('DOMContentLoaded', () => {
   initData();
+  initTheme();
 
   initRouter();
   initClock();
@@ -22,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackgroundLogs();
 
   initTerminal();
+  initGlobalTerminal();
   initConnect();
   initVim();
   initWindowControls();
