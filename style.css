@@ -1,6 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@400;700;800&family=Noto+Serif:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 :root{--primary:#c3e6ff;--primary-container:#7dcfff;--on-primary:#00344a;--on-primary-container:#00587a;--secondary:#d4bbff;--secondary-container:#56378d;--on-secondary-container:#c8a9ff;--tertiary:#d7e1ff;--tertiary-container:#adc5ff;--on-tertiary:#002e6b;--error:#ffb4ab;--error-container:#93000a;--on-error-container:#ffdad6;--background:#12131d;--surface:#12131d;--surface-container-lowest:#0c0d18;--surface-container-low:#1a1b26;--surface-container:#1e1f2a;--surface-container-high:#282935;--surface-container-highest:#333440;--surface-tint:#7fd0ff;--on-surface:#e2e1f1;--on-surface-variant:#bfc8cf;--on-background:#e2e1f1;--outline:#899299;--outline-variant:#3f484e;--inverse-surface:#e2e1f1;--font-headline:'Inter',sans-serif;--font-body:'Inter',sans-serif;--font-code:'Space Grotesk',monospace;--font-label:'Space Grotesk',monospace;--font-kanji:'Noto Serif',serif;--margin:40px;--gutter:24px;--mouse-x:0;--mouse-y:0}
+[data-theme="light"] {
+  --primary: #006493;
+  --primary-container: #cae6ff;
+  --on-primary: #ffffff;
+  --on-primary-container: #001e30;
+  --secondary: #65558f;
+  --secondary-container: #eaddff;
+  --on-secondary-container: #21005d;
+  --tertiary: #0060aa;
+  --tertiary-container: #d4e3ff;
+  --on-tertiary: #001c3a;
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --on-error-container: #410002;
+  --background: #fdfcff;
+  --surface: #fdfcff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4f3fa;
+  --surface-container: #efedf4;
+  --surface-container-high: #e9e7ef;
+  --surface-container-highest: #e3e2e9;
+  --surface-tint: #006493;
+  --on-surface: #1a1c1e;
+  --on-surface-variant: #42474e;
+  --on-background: #1a1c1e;
+  --outline: #73777f;
+  --outline-variant: #c3c7cf;
+  --inverse-surface: #2f3033;
+}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;-webkit-font-smoothing:antialiased}
 body{background:var(--background);color:var(--on-background);font-family:var(--font-body);min-height:100vh;display:flex;overflow-x:hidden;position:relative}
@@ -10,8 +40,9 @@ a{color:inherit;text-decoration:none}
 ::-webkit-scrollbar-track{background:#12131d;border-left:1px solid var(--outline-variant)}
 ::-webkit-scrollbar-thumb{background:var(--outline-variant)}
 ::-webkit-scrollbar-thumb:hover{background:var(--primary-container)}
-.text-display-lg{font-family:var(--font-headline);font-size:48px;font-weight:800;line-height:1.1;letter-spacing:-0.02em}
-.text-headline-md{font-family:var(--font-headline);font-size:24px;font-weight:700;line-height:1.2;letter-spacing:-0.01em}
+.text-display-lg{font-family:var(--font-headline);font-size:56px;font-weight:800;line-height:1.1;letter-spacing:-0.02em}
+.text-display-md{font-family:var(--font-headline);font-size:36px;font-weight:800;line-height:1.2;letter-spacing:-0.02em}
+.text-headline-md{font-family:var(--font-headline);font-size:28px;font-weight:700;line-height:1.3;letter-spacing:-0.01em}
 .text-code-block{font-family:var(--font-code);font-size:14px;font-weight:400;line-height:1.6}
 .text-label-caps{font-family:var(--font-label);font-size:12px;font-weight:600;line-height:1;letter-spacing:0.1em;text-transform:uppercase}
 .glow-sm{box-shadow:0 0 8px rgba(125,207,255,0.3)}
@@ -316,7 +347,15 @@ textarea.term-input{resize:vertical;min-height:160px}
 .module-card-overlay-text{color:var(--primary);border:1px solid var(--primary);padding:4px 12px}
 .project-card-subtitle{font-size:10px;color:var(--secondary);margin-bottom:8px}
 .project-card-title{color:var(--primary);margin-bottom:8px;font-size:20px}
-.project-card-desc{color:var(--on-surface-variant);font-size:14px;margin-bottom:16px}
+.project-card-desc {
+  font-family: var(--font-sans);
+  color: var(--on-surface);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex: 1;
+  opacity: 0.9;
+}
 .footer-text{color:var(--on-surface-variant)}
 .footer-links{display:flex;gap:24px}
 
@@ -392,4 +431,43 @@ body::before {
   0% { transform: scale(1, 1.3); filter: brightness(1); }
   60% { transform: scale(1, 0.001); filter: brightness(10); }
   100% { transform: scale(0, 0.001); filter: brightness(0); }
+}
+
+/* ========== BLOG SECTION ========== */
+.blog-feed{display:flex;flex-direction:column;gap:32px;width:100%;max-width:896px;margin:0 auto}
+.blog-card{border:1px solid var(--outline-variant);background:var(--surface-container-low);padding:32px;cursor:pointer;position:relative;overflow:hidden;transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275),box-shadow 0.3s,border-color 0.3s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.5),0 0 16px rgba(125,207,255,0.1);border-color:var(--primary)}
+.blog-card-header{display:flex;justify-content:space-between;margin-bottom:16px;border-bottom:1px dashed var(--outline-variant);padding-bottom:16px}
+.blog-card-date{color:var(--secondary);font-size:14px}
+.blog-card-status{color:var(--primary);font-size:12px}
+.blog-card-title{color:var(--primary);margin-bottom:16px;font-size:32px}
+.blog-card-summary {
+  font-family: var(--font-sans);
+  color: var(--on-surface);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+.blog-card-tags{display:flex;gap:8px;flex-wrap:wrap}
+.blog-tag{background:var(--surface-container-high);color:var(--on-surface);border:1px solid var(--outline-variant);padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;font-family:var(--font-code)}
+.blog-filter-btn {
+  background: transparent;
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-family: var(--font-code);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.blog-filter-btn:hover {
+  background: var(--surface-container-high);
+  color: var(--on-surface);
+}
+.blog-filter-btn.active {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  border-color: var(--primary-container);
 }

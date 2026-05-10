@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ROOT@UY — Tokyo Storm System Terminal</title>
-<meta name="description" content="Agustín Hernández — Systems Engineer from Uruguay. Ruby on Rails, React, Rust. Tokyo Storm Command Interface."/>
+<title>ROOT — Tokyo Storm System Terminal</title>
+<meta name="description" content="Agustín Hernández — Systems Engineer. Tokyo Storm Command Interface."/>
 <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
@@ -18,10 +18,11 @@
 <div class="kernel-log" id="kernel-log"><div class="text-code-block animate-scroll text-glow" style="font-size:10px;color:var(--primary);line-height:1.4" id="kernel-log-content"></div></div>
 <!-- Sidebar -->
 <nav class="sidebar" id="sidebar" aria-label="Main Navigation">
-<div class="sidebar__brand"><h2 id="profile-handle" class="text-label-caps text-glow sidebar-brand-title">ROOT@UY</h2><p id="profile-system-id" class="text-code-block sidebar-system-id">FE_304_STORM</p></div>
+<div class="sidebar__brand"><h2 id="profile-handle" class="text-label-caps text-glow sidebar-brand-title">ROOT</h2><p id="profile-system-id" class="text-code-block sidebar-system-id">FE_304_STORM</p></div>
 <div class="sidebar-links">
 <a class="sidebar__link sidebar__link--active" href="#home" data-nav="home"><span class="material-symbols-outlined" aria-hidden="true">terminal</span>~/home</a>
 <a class="sidebar__link" href="#projects" data-nav="projects"><span class="material-symbols-outlined" aria-hidden="true">folder_open</span>~/projects</a>
+<a class="sidebar__link" href="#blog" data-nav="blog"><span class="material-symbols-outlined" aria-hidden="true">article</span>~/blog</a>
 <a class="sidebar__link" href="#kernel" data-nav="kernel"><span class="material-symbols-outlined">memory</span>~/kernel</a>
 <a class="sidebar__link" href="#connect" data-nav="connect"><span class="material-symbols-outlined">lan</span>~/connect</a>
 </div>
@@ -37,12 +38,10 @@
 <header class="topbar">
 <div id="profile-version" class="topbar__title text-glow">TOKYO_STORM_v1.0.4</div>
 <nav class="topbar__nav" id="topbar-nav">
-<a class="topbar__nav-link topbar__nav-link--active" href="#">RAILS</a>
-<a class="topbar__nav-link" href="#">REACT</a>
-<a class="topbar__nav-link" href="#">RUST</a>
 </nav>
 <div class="topbar__actions">
 <div class="topbar__clock"><span class="text-glow topbar-clock-time" id="sys-clock">00:00:00</span><span class="topbar-clock-uptime" id="sys-uptime">UP: 0h 0m</span></div>
+<button class="topbar__icon-btn" id="theme-toggle" aria-label="Toggle Theme"><span class="material-symbols-outlined" aria-hidden="true">light_mode</span></button>
 <button class="topbar__icon-btn" aria-label="Open Terminal"><span class="material-symbols-outlined" aria-hidden="true">terminal</span></button>
 <button class="topbar__icon-btn" aria-label="System Settings"><span class="material-symbols-outlined" aria-hidden="true">settings_input_component</span></button>
 <button class="topbar__icon-btn topbar-sys-ok" aria-label="System Status"><span class="material-symbols-outlined topbar-sys-ok-icon" aria-hidden="true">sensors</span>SYS_OK</button>
@@ -57,40 +56,22 @@
 <div class="boot-terminal__body" id="terminal-container">
 <div id="terminal-output"></div>
 <div id="terminal-prompt" class="terminal-prompt-line" style="display:none">
-<span class="text-glow" style="color:var(--primary)">ROOT@UY ~/home $</span>
+<span class="text-glow" style="color:var(--primary)">ROOT ~/home $</span>
 <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" />
 </div>
 </div>
 </section>
+<section style="margin-bottom: 32px; padding: 24px; background: var(--surface-container-low); border: 1px solid var(--outline-variant); border-left: 4px solid var(--primary);">
+  <p id="profile-bio" class="text-code-block" style="font-size: 14px; line-height: 1.6; color: var(--on-surface);"></p>
+</section>
 <section class="interactive-shell">
 <div class="shell-titlebar"><span class="shell-dot shell-dot--red"></span><span class="shell-dot shell-dot--yellow"></span><span class="shell-dot shell-dot--green"></span><span class="text-label-caps shell-titlebar-text">user@host:~</span></div>
 <div class="shell-body text-code-block">
-<div class="shell-body-prompt"><span class="text-glow shell-body-prompt-text">ROOT@UY ~/home $</span> <span class="text-glow">ls -la ./core_skills</span></div>
+<div class="shell-body-prompt"><span class="text-glow shell-body-prompt-text">ROOT ~/home $</span> <span class="text-glow">ls -la ./core_skills</span></div>
 <div class="module-grid" id="skills-grid">
-<div class="module-card">
-<div class="text-label-caps" style="color:var(--secondary);margin-bottom:8px;font-size:12px">MODULE_01</div>
-<h3 class="text-headline-md text-glow" style="color:var(--primary);margin-bottom:8px">Ruby on Rails</h3>
-<p style="color:var(--on-surface-variant);font-size:14px;margin-bottom:16px">Backend architecture, API design, monolithic structuring.</p>
-<div style="display:flex;gap:8px"><span class="module-tag" style="border-color:#ff7eb6;color:#ff7eb6">BACKEND</span><span class="module-tag">POSTGRES</span></div>
-<div class="module-card__overlay"><span class="text-glow blink" style="color:var(--primary);border:1px solid var(--primary);padding:4px 12px">executing...</span></div>
+<!-- Content will be injected by data-loader.ts -->
 </div>
-<div class="module-card module-card--active">
-<div class="module-card--active"><span class="module-card__badge text-label-caps">ACTIVE</span></div>
-<div class="text-label-caps" style="color:var(--secondary);margin-bottom:8px;font-size:12px">MODULE_02</div>
-<h3 class="text-headline-md text-glow" style="color:var(--primary);margin-bottom:8px">React.js</h3>
-<p style="color:var(--on-surface-variant);font-size:14px;margin-bottom:16px">Frontend component systems, state management, SPA.</p>
-<div style="display:flex;gap:8px"><span class="module-tag" style="border-color:#82aaff;color:#82aaff">FRONTEND</span><span class="module-tag">TYPESCRIPT</span></div>
-<div class="module-card__overlay"><span class="text-glow blink" style="color:var(--primary);border:1px solid var(--primary);padding:4px 12px">status: ACTIVE</span></div>
-</div>
-<div class="module-card">
-<div class="text-label-caps" style="color:var(--secondary);margin-bottom:8px;font-size:12px">MODULE_03</div>
-<h3 class="text-headline-md text-glow" style="color:var(--primary);margin-bottom:8px">Rust</h3>
-<p style="color:var(--on-surface-variant);font-size:14px;margin-bottom:16px">Systems programming, memory safety, high performance CLI.</p>
-<div style="display:flex;gap:8px"><span class="module-tag" style="border-color:#f07178;color:#f07178">SYSTEMS</span><span class="module-tag">WASM</span></div>
-<div class="module-card__overlay"><span class="text-glow blink" style="color:var(--primary);border:1px solid var(--primary);padding:4px 12px">executing...</span></div>
-</div>
-</div>
-<div class="cli-prompt"><span class="text-glow shell-body-prompt-text">ROOT@UY ~/home $</span>&nbsp;<span class="text-glow">execute --module=REACT</span><span class="cli-cursor blink"></span></div>
+<div class="cli-prompt"><span class="text-glow shell-body-prompt-text">ROOT ~/home $</span>&nbsp;<span class="text-glow">execute --module=REACT</span><span class="cli-cursor blink"></span></div>
 </div>
 </section>
 </div>
@@ -98,18 +79,17 @@
 
 <!-- ===== PROJECTS ===== -->
 <div class="section" id="section-projects" data-section="projects">
-<div class="content-canvas" style="padding:var(--margin);flex:1;max-width:none">
-<section class="ide-container">
+<div class="content-canvas" style="padding:var(--margin);flex:1;max-width:none; display:flex; flex-direction:column; gap:64px;">
+<section class="ide-container" style="max-height: 400px; flex-shrink: 0;">
 <div class="ide-tabs">
 <div class="ide-tabs__dots"><span class="shell-dot shell-dot--red"></span><span class="shell-dot shell-dot--yellow"></span><span class="shell-dot shell-dot--green"></span></div>
 <div style="display:flex;overflow-x:auto">
 <button class="ide-tab ide-tab--active"><span class="material-symbols-outlined" style="font-size:16px">integration_instructions</span>ExperienceLog.ts</button>
-<button class="ide-tab"><span class="material-symbols-outlined" style="font-size:16px">terminal</span>Project_Matrix.rs</button>
 </div>
 </div>
-<div class="ide-body">
+<div class="ide-body" style="display: block;">
 <div class="scanline"></div>
-<div class="code-editor">
+<div class="code-editor" style="height: 100%; border-right: none;">
 <div style="display:flex">
 <div class="code-editor__lines">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21</div>
 <div class="code-editor__content"><span class="syn-kw">import</span> { <span class="syn-type">SystemEngineer</span> } <span class="syn-kw">from</span> <span class="syn-str">'@core/uy-node'</span>;
@@ -136,13 +116,41 @@
 ];</div>
 </div>
 </div>
-<div class="project-panel">
-<div class="project-panel-header"><h3 class="text-label-caps project-panel-title">PROJECT_MATRIX // VISUAL_RENDER</h3><span class="blink project-panel-cursor">_</span></div>
-<div class="project-grid" id="projects-grid">
-</div>
-</div>
 </div>
 </section>
+<section class="projects-display">
+<div style="margin-bottom: 32px; border-bottom: 1px solid var(--outline-variant); padding-bottom: 16px;">
+<h2 class="text-display-lg text-glow" style="color:var(--primary);margin-bottom:8px;">PROJECT_MATRIX</h2>
+<p class="text-code-block" style="color:var(--on-surface-variant)">Deployed systems and architectural experiments.</p>
+</div>
+<div class="project-grid" id="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 32px;">
+</div>
+</section>
+</div>
+</div>
+
+<!-- ===== BLOG ===== -->
+<div class="section" id="section-blog" data-section="blog">
+<div class="content-canvas" style="display:flex; flex-direction:column; gap:48px;">
+<div style="border-bottom: 1px solid var(--outline-variant); padding-bottom: 24px;">
+<h2 class="text-display-lg text-glow" style="color:var(--primary);margin-bottom:16px;display:flex;align-items:center;gap:16px;">
+<span class="material-symbols-outlined sensor-wave" style="font-size:40px;box-shadow:0 0 15px rgba(125,207,255,0.4);border-radius:50%">article</span>
+SYSTEM_LOGS
+</h2>
+<p class="text-code-block" style="color:var(--on-surface-variant);display:flex;align-items:center;gap:8px">
+<span style="width:8px;height:8px;border-radius:50%;background:var(--secondary);display:inline-block" class="blink"></span>
+Streaming abstract thoughts, architectural musings, and Linux configurations.
+</p>
+<div class="blog-filters" id="blog-filters" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+  <button class="blog-filter-btn active" data-category="All">All</button>
+  <button class="blog-filter-btn" data-category="Developer">Developer</button>
+  <button class="blog-filter-btn" data-category="Japanese Learner">Japanese Learner</button>
+  <button class="blog-filter-btn" data-category="Personal">Personal</button>
+</div>
+</div>
+<div class="blog-feed" id="blog-grid" style="display:flex; flex-direction:column; gap:32px;">
+<!-- Populated by JS -->
+</div>
 </div>
 </div>
 
