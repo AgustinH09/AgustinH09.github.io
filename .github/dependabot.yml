@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "npm"
+    directory: "/dot_config/nvim/dot_snippets"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "npm"
+    directory: "/dot_config/nvim/snippets"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "bundler"
+    directory: "/dot_config/nvim/dot_ruby-lsp"
+    schedule:
+      interval: "daily"
