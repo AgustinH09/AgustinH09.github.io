@@ -34,10 +34,10 @@ export function initData(): void {
       <div class="module-card ${skill.active ? 'module-card--active' : ''}">
         ${skill.active ? '<div class="module-card--active"><span class="module-card__badge text-label-caps">ACTIVE</span></div>' : ''}
         <div class="text-label-caps module-card-subtitle">${skill.id}</div>
-        <h3 class="text-headline-md text-glow module-card-title">${skill.title}</h3>
+        <h2 class="text-headline-md text-glow module-card-title">${skill.title}</h2>
         <p class="module-card-desc">${skill.description}</p>
         <div class="module-tag-container">
-          ${skill.tags.map((tag: any) => `<span class="module-tag" ${tag.color ? `style="border-color:${tag.color};color:${tag.color}"` : ''}>${tag.label}</span>`).join('')}
+          ${skill.tags.map((tag: any) => `<span class="module-tag" ${tag.color ? `style="border-color:${tag.color};"` : ''}>${tag.label}</span>`).join('')}
         </div>
         <div class="module-card__overlay"><span class="text-glow blink module-card-overlay-text">${skill.active ? 'status: ACTIVE' : 'executing...'}</span></div>
       </div>
