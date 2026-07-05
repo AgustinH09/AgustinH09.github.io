@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: javascript-and-typescript
+          - language: javascript
             build-mode: none
           - language: actions
             build-mode: none
