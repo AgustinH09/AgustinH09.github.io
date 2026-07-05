@@ -14,6 +14,7 @@ import { initVim } from './vim';
 import { initWindowControls } from './window-controls';
 import { initData } from './data-loader';
 import { initTheme } from './theme';
+import { initAsciiArt } from './ascii-art';
 
 document.addEventListener('DOMContentLoaded', () => {
   initData();
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initClock();
   initParallax();
   initBackgroundLogs();
+  initAsciiArt();
 
   initTerminal();
   initGlobalTerminal();
