@@ -435,22 +435,19 @@ body::before {
 
 /* ========== BLOG SECTION ========== */
 .blog-feed{display:flex;flex-direction:column;gap:32px;width:100%;max-width:896px;margin:0 auto}
-.blog-card{border:1px solid var(--outline-variant);background:var(--surface-container-low);padding:32px;cursor:pointer;position:relative;overflow:hidden;transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275),box-shadow 0.3s,border-color 0.3s}
-.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.5),0 0 16px rgba(125,207,255,0.1);border-color:var(--primary)}
-.blog-card-header{display:flex;justify-content:space-between;margin-bottom:16px;border-bottom:1px dashed var(--outline-variant);padding-bottom:16px}
-.blog-card-date{color:var(--secondary);font-size:14px}
-.blog-card-status{color:var(--primary);font-size:12px}
-.blog-card-title{color:var(--primary);margin-bottom:16px;font-size:32px}
+.blog-card{border:1px solid var(--outline-variant);background:var(--surface-container-low);padding:24px;cursor:pointer;position:relative;transition:all 0.3s cubic-bezier(0.175,0.885,0.32,1.275)}
+.blog-card:hover{border-color:var(--primary);box-shadow:0 0 8px rgba(125,207,255,0.3)}
+.blog-card .group-hover{transition:color 0.3s}
+.blog-card:hover .group-hover{color:var(--primary)}
 .blog-card-summary {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   color: var(--on-surface);
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 24px;
   opacity: 0.9;
 }
-.blog-card-tags{display:flex;gap:8px;flex-wrap:wrap}
-.blog-tag{background:var(--surface-container-high);color:var(--on-surface);border:1px solid var(--outline-variant);padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:0.05em;font-family:var(--font-code)}
+.blog-tag{background:transparent;border:1px solid var(--outline-variant);padding:2px 8px;font-size:12px;font-weight:600;letter-spacing:0.1em;font-family:var(--font-label);text-transform:uppercase}
 .blog-filter-btn {
   background: transparent;
   border: 1px solid var(--outline-variant);

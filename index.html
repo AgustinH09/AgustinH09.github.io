@@ -57,7 +57,7 @@
 <div class="topbar__actions">
 <div class="topbar__clock"><span class="text-glow topbar-clock-time" id="sys-clock">00:00:00</span><span class="topbar-clock-uptime" id="sys-uptime">UP: 0h 0m</span></div>
 <button class="topbar__icon-btn" id="theme-toggle" aria-label="Toggle Theme"><span class="material-symbols-outlined" aria-hidden="true">light_mode</span></button>
-<button class="topbar__icon-btn" aria-label="Open Terminal"><span class="material-symbols-outlined" aria-hidden="true">terminal</span></button>
+<button class="topbar__icon-btn" id="btn-open-global-terminal" aria-label="Open Terminal"><span class="material-symbols-outlined" aria-hidden="true">terminal</span></button>
 <button class="topbar__icon-btn" aria-label="System Settings"><span class="material-symbols-outlined" aria-hidden="true">settings_input_component</span></button>
 <button class="topbar__icon-btn topbar-sys-ok" aria-label="System Status"><span class="material-symbols-outlined topbar-sys-ok-icon" aria-hidden="true">sensors</span>SYS_OK</button>
 </div>
@@ -70,14 +70,17 @@
 <section style="margin-bottom: 32px; padding: 24px; background: var(--surface-container-low); border: 1px solid var(--outline-variant); border-left: 4px solid var(--primary);">
   <p id="profile-bio" class="text-code-block" style="font-size: 14px; line-height: 1.6; color: var(--on-surface);"></p>
 </section>
-<section class="interactive-shell">
-<div class="shell-titlebar"><span class="shell-dot shell-dot--red"></span><span class="shell-dot shell-dot--yellow"></span><span class="shell-dot shell-dot--green"></span><span class="text-label-caps shell-titlebar-text">user@host:~</span></div>
-<div class="shell-body text-code-block">
-<div class="shell-body-prompt"><span class="text-glow shell-body-prompt-text">ROOT ~/home $</span> <span class="text-glow">ls -la ./core_skills</span></div>
-<div class="module-grid" id="skills-grid">
+<div class="module-grid" id="skills-grid" style="margin-bottom: 24px;">
 <!-- Content will be injected by data-loader.ts -->
 </div>
-<div class="cli-prompt"><span class="text-glow shell-body-prompt-text">ROOT ~/home $</span>&nbsp;<span class="text-glow" style="color:var(--outline)">Press ~ or ` to drop to shell</span><span class="cli-cursor blink"></span></div>
+<section class="interactive-shell">
+<div class="shell-titlebar"><span class="shell-dot shell-dot--red"></span><span class="shell-dot shell-dot--yellow"></span><span class="shell-dot shell-dot--green"></span><span class="text-label-caps shell-titlebar-text">user@host:~</span></div>
+<div class="shell-body text-code-block" id="home-terminal-container" style="max-height: 400px; overflow-y: auto;">
+<div id="home-terminal-output"></div>
+<div id="home-terminal-prompt" class="terminal-prompt-line" style="display:none">
+  <span class="text-glow shell-body-prompt-text" style="color:var(--primary)">ROOT ~/home $</span>
+  <input type="text" id="home-terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" />
+</div>
 </div>
 </section>
 </div>
@@ -154,7 +157,7 @@ Streaming abstract thoughts, architectural musings, and Linux configurations.
   <button class="blog-filter-btn" data-category="Personal">Personal</button>
 </div>
 </div>
-<div class="blog-feed" id="blog-grid" style="display:flex; flex-direction:column; gap:32px;">
+<div class="blog-feed" id="blog-grid">
 <!-- Populated by JS -->
 </div>
 </div>

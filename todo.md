@@ -1,0 +1,4 @@
+- [ ] Replace blog filler content with real sample content that highlights the Tokyo Storm terminal aesthetic.
+- [ ] Add functional hover interactions to blog tags as per the mockups.
+- [ ] Move any remaining Tailwind CSS references in html files to explicit custom CSS properties in `style.css`.
+- [ ] Implement mobile-responsive sizing for the terminal overlay so it looks good on phones.

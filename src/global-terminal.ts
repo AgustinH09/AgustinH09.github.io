@@ -23,4 +23,9 @@ export function initGlobalTerminal(): void {
   if (closeBtn) {
     closeBtn.addEventListener('click', toggleTerminal);
   }
+
+  const openBtn = document.getElementById('btn-open-global-terminal');
+  if (openBtn) {
+    openBtn.addEventListener('click', toggleTerminal);
+  }
 }

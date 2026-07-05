@@ -70,18 +70,20 @@ export function initData(): void {
         : blogData.filter(post => post.category === filterCategory);
         
       blogGrid.innerHTML = filteredBlogs.map(post => `
-        <div class="blog-card" data-category="${post.category}">
-          <div class="blog-card-header">
-            <span class="text-label-caps blog-card-date">${post.date}</span>
-            <span class="text-code-block blink blog-card-status">[READ_FILE]</span>
-          </div>
-          <h3 class="text-display-md text-glow blog-card-title">${post.title}</h3>
-          <p class="blog-card-summary">${post.summary}</p>
-          <div class="blog-card-tags">
-            <span class="blog-tag" style="border-color:var(--primary);color:var(--primary)">${post.category}</span>
-            ${post.tags.map((tag: string) => `<span class="blog-tag">${tag}</span>`).join('')}
-          </div>
-        </div>
+        <article class="blog-card group">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <span class="text-label-caps blog-tag" style="border-color:var(--secondary);color:var(--secondary);padding:2px 8px">${post.category}</span>
+                    <span class="text-code-block text-on-surface-variant" style="font-size:12px;">${post.date}</span>
+                </div>
+                <span class="material-symbols-outlined text-outline-variant transition-colors group-hover">arrow_forward</span>
+            </div>
+            <h3 class="text-headline-md text-primary mb-3 text-glow">${post.title}</h3>
+            <p class="blog-card-summary text-on-surface-variant mb-4">${post.summary}</p>
+            <div class="text-code-block text-outline" style="display:flex; align-items:center; gap:8px; font-size:12px;">
+                <span class="text-primary">root@uy:~$</span> cat /var/log/${post.id}.md
+            </div>
+        </article>
       `).join('');
     };
 

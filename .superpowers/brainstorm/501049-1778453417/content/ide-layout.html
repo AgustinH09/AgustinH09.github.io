@@ -1,0 +1,52 @@
+<h2>Design Section 1: The IDE Layout</h2>
+<p class="subtitle">Does this structure look right for the main interface?</p>
+
+<div class="mockup">
+  <div class="mockup-header">ROOT@TOKYO_STORM - IDE Mode</div>
+  <div class="mockup-body" style="display: flex; height: 400px; flex-direction: column; background: #0d0d0d; color: #ccc; font-family: monospace;">
+    <!-- Top Nav / Tab bar -->
+    <div style="height: 35px; background: #1e1e1e; border-bottom: 1px solid #333; display: flex; align-items: center; padding: 0 15px;">
+      <div style="color: #888; font-size: 12px;">AgustinH09_Workspace</div>
+    </div>
+    
+    <div style="display: flex; flex: 1;">
+      <!-- Sidebar (File Explorer) -->
+      <div style="width: 200px; background: #181818; border-right: 1px solid #333; padding: 15px; font-size: 13px;">
+        <div style="color: #fff; margin-bottom: 15px; font-size: 11px; font-weight: bold; letter-spacing: 1px;">EXPLORER</div>
+        <div style="color: #888; margin-bottom: 8px; cursor: pointer;">> home/</div>
+        <div style="color: #fff; margin-bottom: 8px; cursor: pointer;">v projects/</div>
+        <div style="color: #4CAF50; margin-left: 15px; margin-bottom: 8px; cursor: pointer;">📄 overload.md</div>
+        <div style="color: #888; margin-left: 15px; margin-bottom: 8px; cursor: pointer;">📄 tokyo_storm.rs</div>
+        <div style="color: #888; margin-bottom: 8px; cursor: pointer;">> blog/</div>
+        <div style="color: #888; margin-bottom: 8px; cursor: pointer;">> system_logs/</div>
+      </div>
+      
+      <!-- Main Content (Editor) -->
+      <div style="flex: 1; display: flex; flex-direction: column;">
+        <!-- Tabs -->
+        <div style="display: flex; background: #181818; font-size: 13px;">
+          <div style="padding: 10px 20px; background: #0d0d0d; color: #4CAF50; border-top: 2px solid #4CAF50;">overload.md</div>
+          <div style="padding: 10px 20px; background: #181818; color: #888;">system_profile.cfg</div>
+        </div>
+        <!-- Editor Content -->
+        <div style="padding: 30px; flex: 1; overflow-y: auto;">
+          <h1 style="color: #fff; margin-top: 0; font-size: 24px;">Project: Overload</h1>
+          <p style="color: #aaa; line-height: 1.6; font-size: 14px;">A live-streaming website that blends real internet content from 50+ sources with AI-generated noise in an endless feed where nothing can be trusted.</p>
+          <p style="color: #888; margin-top: 20px; font-size: 12px;">// Implementation details</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Terminal Pane -->
+    <div style="height: 130px; background: #050505; border-top: 1px solid #333; padding: 15px; font-size: 13px; color: #aaa;">
+      <div style="display: flex; gap: 15px; margin-bottom: 10px; font-size: 11px; text-transform: uppercase;">
+         <span style="color: #fff; border-bottom: 1px solid #fff; padding-bottom: 2px;">Terminal</span>
+         <span style="color: #555;">Output</span>
+         <span style="color: #555;">Problems</span>
+      </div>
+      <div><span style="color: #4CAF50;">ROOT ~/projects $</span> ls</div>
+      <div style="color: #ccc;">overload.md  tokyo_storm.rs</div>
+      <div style="margin-top: 5px;"><span style="color: #4CAF50;">ROOT ~/projects $</span> <span style="background: #4CAF50; width: 8px; height: 15px; display: inline-block; vertical-align: middle;"></span></div>
+    </div>
+  </div>
+</div>
