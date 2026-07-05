@@ -24,11 +24,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: python
+          - language: javascript-and-typescript
             build-mode: none
           - language: actions
-            build-mode: none
-          - language: ruby
             build-mode: none
 
     steps:

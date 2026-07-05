@@ -192,49 +192,7 @@ jobs:
           category: trivy
         continue-on-error: true
 
-  chezmoi-validation:
-    name: Validate Chezmoi Configuration
-    runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-
-      - name: Install Chezmoi
-        run: |
-          sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-
-      - name: Validate Chezmoi files
-        run: |
-          echo "🔍 Validating Chezmoi configuration..."
-
-          if [ -f "chezmoi.toml" ] || [ -f ".chezmoi.toml.tmpl" ]; then
-            echo "✅ Chezmoi configuration found"
-
-            # Check for encryption in whichever file exists
-            if grep -q "encryption" chezmoi.toml 2>/dev/null || grep -q "encryption" .chezmoi.toml.tmpl 2>/dev/null; then
-              echo "✅ Encryption is configured"
-            else
-              echo "⚠️  Warning: No encryption configuration found"
-            fi
-          else
-            echo "❌ Chezmoi configuration not found!"
-            exit 1
-          fi
-
-          if [ -f ".chezmoiignore" ]; then
-            echo "✅ .chezmoiignore found"
-
-            if grep -q "key.txt" .chezmoiignore; then
-              echo "✅ Private key is properly ignored"
-            else
-              echo "⚠️  Warning: Private key may not be ignored"
-            fi
-          fi
-
-          echo ""
-          echo "✅ Chezmoi configuration validation complete!"
 
   git-history-scan:
     name: Git History Deep Scan
@@ -290,7 +248,6 @@ jobs:
         encryption-verification,
         file-permissions,
         dependency-scanning,
-        chezmoi-validation,
         git-history-scan,
       ]
     if: always()
@@ -307,7 +264,6 @@ jobs:
           echo "| Encryption Verification | ${{ needs.encryption-verification.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| File Permissions | ${{ needs.file-permissions.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Dependency Scanning | ${{ needs.dependency-scanning.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Chezmoi Validation | ${{ needs.chezmoi-validation.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| History Scan | ${{ needs.git-history-scan.result == 'success' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Scan completed at:** $(date -u)" >> $GITHUB_STEP_SUMMARY
